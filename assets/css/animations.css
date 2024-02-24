@@ -1,0 +1,21 @@
+@keyframes slideIn-sideBar {
+  0% {
+    left: -50px;
+  }
+
+  100% {
+    left: 2vw;
+  }
+}
+
+@keyframes slideUp-content {
+  0% {
+    top: 96vh;
+    opacity: 10%;
+    transform: scale(0.25);
+  }
+ 60% {
+    opacity: 10%;
+    top: 2vh;
+  }
+}
