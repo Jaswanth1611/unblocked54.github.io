@@ -7,7 +7,10 @@
 var pLoaderConfig = {
   defaultLocation: "",
   settingsKey: "",
-};
+  authElem: "",
+  authAttribute: "",
+  authKey: "",
+ };
 
 window.onload = loadManager();
 
@@ -22,8 +25,9 @@ function loadManager() {
         hideWindow();
       } else {
       	if(simpleSearchStatus == loaded) {
-          
+          loadPage("default");
         } else {
+          loadingError("An error occured when loading the Simple Search library. Please try again!")
          } 
       } 
     } else {
@@ -34,7 +38,24 @@ function loadManager() {
        }
      }  
    } else {
-   if(framedStatus == hidden) 
+   if(framedStatus == hidden) {
+     var auth = document.getElementById(pLoaderConfig.authElem).getAttribute(pLoaderConfig.authAttribute);
+     if(auth == pLoaderConfig.authKey) {
+       loadPage("default")
+     	  } else { 
+           if(auth == null | auth == < 0) {
+             loadingError("The authorization key passed from the original window is null or less than value of 0! Please try again.")
+          } else {
+            loadingError("An error occured in regards to the authorization key passed from the original window! Please try again.")
+          }
+     	} 
+   	  } else {
+        if(framedStatus == mal | framedStatus == < 0 | framedStatus == null) {
+          loadingError("The frame status is null or less than the value of 0. Please try again!")
+      } else { 
+        loadingError("An error occured in regards to the frame status of this page. Please try again later.")
+      } 
+   	}
   } 
 }
 
@@ -56,12 +77,12 @@ if(window.self !== window.top) {
 
 function loadSettings() {
 	if(checkTop() == hidden) {
-    	var settings = window.settingsHandOff;
+    	var window.settings = window.settingsHandOff;
       	console.log("Settings have been loaded from the handoff varible")
       	return loaded
    } else {
    	if(checkTop() == normal) {
-      var settings = JSON.parse(localStorage.getItems(pLoaderConfig.settingsKey));
+      var window.settings = JSON.parse(localStorage.getItems(pLoaderConfig.settingsKey));
       return loaded
     } else {
       return mal 
