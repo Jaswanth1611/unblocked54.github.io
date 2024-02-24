@@ -25,11 +25,12 @@ queryElement: "searchBar"
   }
   
   //Functionality
-  function searchStarter() { 
+  function startSimpleSearch() { 
   var searchBar = document.getElementById(config.queryElement);
   searchBar.addEventListener("input", () => {
   	 search()
  	 });
+	return loaded
   }
   
   function search() { 
