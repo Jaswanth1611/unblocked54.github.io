@@ -1,25 +1,110 @@
-<!DOCTYPE html> 
-<html>
-<head><script src="https://kit.fontawesome.com/ea084e38cd.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="assets/css/main.css">
-<title>New Tab</title>
-<meta name="viewport" content="width=device-width, initial-scale=1"/></head>
-	<body style="font-family:'monospace';overflow-x: hidden; flex-direction: column; background-color: black; margin-top: 20px; display: flex; align-items: center; width: 100vw; height: 100vh;">
+<!DOCTYPE html>
+<html lang="en">
 
-		
-		        </div>
-			
-		<div style="border-radius: 10px; width: 550px; min-height: 135px;display: flex; background-color: #1A1A1A; border: solid 2px #5AFF00;margin-bottom: 15px;" name="free-week">
-		
-		<div style="padding-left: 15px;color: white;width: 50px;height: 100%;display: flex; justify-content:center;align-items:center;"><i style="font-size: 35px;" class="fa-solid fa-gift"></i></div>
-		<div style="padding-left: 15px;display: flex; flex-direction: column;justify-content: center;"><span style="color: gray;font-size: 16px;font-weight: bolder;">ENJOY GAMES FREE FOR ONE WEEK</span>
-		
-		<span style="padding-right: 15px;color: white; font-size: 16px;">Supergames is nearing development, just click the "Play Now" button and enjoy!</span>
-		</div>
-		
-			</div>
-			
-			<button onclick="hideWindow()" class="sg-button-play">PLAY NOW <i class="fa-solid fa-play"></i></button>
-		<script src="assets/js/scripts.js"></script>
-	</body>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Fredoka:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"/>
+    <link rel="stylesheet" href="animations.css"/>
+    <title>SuperGames - Home</title>
+</head>
+
+<body id="application">
+
+
+    <div class="sideBarHolder">
+        <div id="sideBar" class="sideBar home">
+            <a onclick="">
+                <span style="display: unset !important;"class="material-symbols-outlined">apps</span>
+                <span>&nbsp;Home</span>
+            </a>
+
+            <a>
+                <span style="display: unset !important;" class="material-symbols-outlined">search</span>
+                <span>&nbsp;Search</span>
+            </a>
+
+            <a>
+                <span style="display: unset !important;" class="material-symbols-outlined">settings</span>
+                <span>&nbsp;Settings</span>
+            </a>
+
+            <a>
+                <span style="display: unset !important;" class="material-symbols-outlined">close</span>
+                <span>&nbsp;Close Tab</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="contentContainer">
+        <div id="pageContent" class="content home">
+            <div class="contentHolder">
+                <div class="content-news">
+                    <div class="carousel">
+                        
+                    </div>
+                </div>
+                <div class="content-games">
+                    <div class="game-row">
+                        <div class="category-name">Popular Games</div>
+
+                        <div class="game-tile-holder">
+                        
+                            <div class="game-tile">
+                                <div class="game-image">
+                                <img src="https://cdn.akamai.steamstatic.com/steam/apps/2305790/capsule_616x353.jpg?t=1694685389">
+                                    <div class="game-name">1v1.LOL</div>
+                                </div>
+                            </div>
+                            
+                            <div class="game-tile">
+                                <div class="game-image">
+                                <img src="https://th.bing.com/th/id/OIP.9uEq0e1ME5XyhKPi-yZK-gHaEK?rs=1&pid=ImgDetMain">
+                                    <div class="game-name">Shell Shockers</div>
+                                </div>
+                            </div>
+                            
+                            <div class="game-tile">
+                                <div class="game-image">
+                                <img src="https://wallpaperaccess.com/full/2184838.jpg">
+                                    <div class="game-name">Roblox</div>
+                                </div>
+                            </div>
+                            
+                            <div class="game-tile">
+                                <div class="game-image">
+                                <img src="https://th.bing.com/th/id/OIP.b78tTmd8mOKKVr1CuLs9QAHaEK?rs=1&pid=ImgDetMain">
+                                    <div class="game-name">BitLife</div>
+                                </div>
+                            </div>
+                            
+                            <div class="game-tile">
+                                <div class="game-image">
+                                <img src="https://th.bing.com/th/id/OIP.HGRRtFdLoE2taBuSSluS7AAAAA?rs=1&pid=ImgDetMain">
+                                    <div class="game-name">Tunnel Rush</div>
+                                </div>
+                            </div>
+                            
+                            <div class="game-tile">
+                                <div class="game-image">
+                                <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/1454400/header.jpg?t=1630523196">
+                                    <div class="game-name">Cookie Clicker</div>
+                                </div>
+                            </div>
+                            
+
+                        </div>
+                    </div>
+
+                    
+                <div class="content-footer"></div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
 </html>
