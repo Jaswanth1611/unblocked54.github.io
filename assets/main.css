@@ -1,0 +1,273 @@
+:root {
+  --black: #000000;
+  --almostBlack: #161616;
+  --darkGray: #2A2A2A;
+  --gray: #3B3B3B;
+  --selectedGray: #525252;
+  --textGray: gray;
+  --white: white;
+  --lightTextGray: lightgray;
+}
+
+body {
+  margin: 0px;
+  font-family: 'Anta', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  padding: 0px;
+  background-color: var(--black);
+}
+
+.contentContainer {
+  height: 100%;
+  position: relative;
+  z-index: 50;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.content.home {
+  animation: slideUp-content 300ms;
+}
+
+.sideBar.home {
+  animation: slideIn-sideBar 300ms;
+}
+
+.content {
+  height: 96%;
+  overflow: scroll;
+  position: relative;
+  right: 2vw;
+  transition: 200ms;
+  left: calc(2vw + 20px);
+  width: calc(96% - 20px);
+  border-radius: 20px;
+  border: solid 1.5px var(--darkGray);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--almostBlack);
+}
+
+.sideBarHolder {
+  height: 96vh;
+  margin: auto;
+  display: flex;
+  width: 0.1px;
+  align-items: center;
+}
+
+.carousel {
+  height: 90%;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  width: 95%;
+  background-color: var(--textGray);
+  border-radius: 15px;
+}
+
+.game-row {
+  min-width: 100%;
+  height: 150px;
+}
+
+.contentHolder {
+  height: 100%;
+  width: 100%;
+}
+
+.sideBar {
+  position: absolute;
+  box-shadow: 0 0 5px -1px black;
+  z-index: 100;
+  background-color: var(--darkGray);
+  border-radius: 20px;
+  border: solid 1.5px var(--gray);
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  min-width: 40px;
+  transition: 200ms;
+  left: 2vw;
+  align-items: center;
+  justify-content: center;
+}
+
+.sideBar a {
+  cursor: pointer;
+  width: 100%;
+  color: white;
+  justify-content: center;
+  display: flex;
+  transition: 200ms;
+  border-radius: 10px;
+  padding-top: 6px;
+  overflow: hidden;
+  margin-top: 3px;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-bottom: 3px;
+  padding-bottom: 6px;
+}
+
+.sideBar a:hover {
+  background-color: var(--selectedGray);
+}
+
+.sideBar:hover>a {
+  width: 90%;
+  justify-content: unset;
+  padding-left: 5px;
+}
+
+.sideBar>a>span {
+  display: none;
+}
+
+.sideBar:hover>a>span {
+  display: unset;
+}
+
+.sideBar:hover {
+  min-width: 150px;
+  box-shadow: 0 0 15px -1px black;
+  transform: translate(8px);
+}
+
+.content-footer {
+  width: 100%;
+  display: flex;
+  height: 150px;
+}
+
+.content-news {
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-games {
+  min-height: calc(100% - 150px);
+  display: flex;
+  padding-left: 30px;
+  padding-top: 20px;
+  flex-direction: column;
+}
+
+.content::-webkit-scrollbar {
+  display: none;
+}
+
+.category-name {
+  color: var(--lightTextGray);
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  width: 100%;
+  height: 20px;
+  overflow: hidden;
+}
+
+.game-tile-holder {
+  height: calc(100% - 20px);
+  width: 100%;
+  max-height: calc(100% - 20px);
+  padding-left: 2px;
+  display: flex;
+  overflow-x: scroll;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.game-tile-holder::-webkit-scrollbar { 
+display: none;
+ }
+
+.game-tile {
+  display: flex;
+  outline: 2px solid transparent;
+  transition: 125ms;
+  overflow: hidden;
+  flex-direction: column;
+  background-color: transparent;
+  height: 100px;
+  min-width: 160px;
+  margin-right: 20px;
+  border-radius: 10px;
+  
+}
+
+.game-name {
+  position: absolute;
+  bottom: -30px;
+  background-color: hsla(0,0%,0%,0.75);
+  width: 100%;
+  font-size: 14px;
+  transition: 125ms;
+  font-weight: bold;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  z-index: 100;
+}
+
+.game-image {
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  position: relative;
+}
+
+.game-image img {
+  width: 100%;
+  height: 100%;
+}
+.game-tile:hover > .game-image > .game-name { 
+  bottom: 0px;
+}
+.game-tile:hover { 
+outline-offset: 2px;
+outline: solid 3px var(--white);
+}
+.news-item {
+  height: 100%;
+  width: 0%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  position: relative;
+}
+
+@keyframes slideIn-sideBar {
+  0% {
+    left: -50px;
+  }
+
+  100% {
+    left: 2vw;
+  }
+}
+
+@keyframes slideUp-content {
+  0% {
+    top: 96vh;
+    opacity: 10%;
+    transform: scale(0.25);
+  }
+ 60% {
+    opacity: 10%;
+    top: 2vh;
+  }
+}
