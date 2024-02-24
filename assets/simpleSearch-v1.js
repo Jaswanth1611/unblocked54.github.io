@@ -1,7 +1,7 @@
 /* 
 	 -> Welcome to SimpleSearch a basic JS library for allowing users to search through HTML elements
 	 -> Customize the configuration below to your liking!
-   -> Made for SuperGames | By Michael B
+  	 -> Made for SuperGames | By Michael B
 */
 
 var config = {
