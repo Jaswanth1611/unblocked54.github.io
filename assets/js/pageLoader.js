@@ -19,7 +19,7 @@ var pLoaderConfig = {
 
 window.onload = () => {
  loadManager()
- console.log(pLoaderConfig.loadMessage)
+ console.log(pLoaderConfig.loadMessage + 'Parent Application: ' + pLoaderConfig.applicationName);
 }
 
 function loadManager() {
