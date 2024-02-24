@@ -7,7 +7,7 @@
 var config = {
 
 //Onload message configuration
-applicationName/*The application this file is being used in that is*/: "SimpleSearch",
+applicationName/*The application this file is being used in that is*/: "Unblocked54 GitHub",
 loadMessage: "Loaded SimpleSearch",
   
 //Functionality Configuration
