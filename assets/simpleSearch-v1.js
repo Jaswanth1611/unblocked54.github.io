@@ -6,15 +6,15 @@
 
 var config = {
 
-  //Onload message configuration
-	applicationName/*The application this file is being used in that is*/: "SimpleSearch",
-	loadMessage: "Loaded SimpleSearch",
+//Onload message configuration
+applicationName/*The application this file is being used in that is*/: "SimpleSearch",
+loadMessage: "Loaded SimpleSearch",
   
-  //Functionality Configuration
-	attributeToSearch: "name",
-  attributeModificiation: "hidden",
-  elementToFilter: ".tile",
-  queryElement: "searchBar"
+//Functionality Configuration
+attributeToSearch: "name",
+attributeModificiation: "hidden",
+elementToFilter: ".tile",
+queryElement: "searchBar"
   
 };
   
