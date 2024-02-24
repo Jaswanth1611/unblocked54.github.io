@@ -5,6 +5,11 @@
 */
 
 var pLoaderConfig = {
+  //Visual cusomization
+  applicationName:/*The name of the applicaiton this file is loading that is.*/"Unblocked 54 Github",
+  loadMessage: "Loading page...",
+	
+  //Functionality Configuraton
   defaultLocation: "",
   settingsKey: "",
   authElem: "",
@@ -12,7 +17,10 @@ var pLoaderConfig = {
   authKey: "",
  };
 
-window.onload = loadManager();
+window.onload = () => {
+ loadManager()
+ console.log(pLoaderConfig.loadMessage)
+}
 
 function loadManager() {
    var framedStatus = checkTop();
