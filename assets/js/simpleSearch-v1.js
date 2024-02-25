@@ -30,7 +30,7 @@ queryElement: "searchBar"
   searchBar.addEventListener("input", () => {
   	 search()
  	 });
-	return loaded
+  return loaded
   }
   
   function search() { 
