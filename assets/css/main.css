@@ -9,7 +9,7 @@
   --lightTextGray: lightgray;
 }
 
-body {
+body, .application {
   margin: 0px;
   font-family: 'Anta', sans-serif;
   height: 100vh;
