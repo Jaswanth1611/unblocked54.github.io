@@ -19,7 +19,7 @@ var pLoaderConfig = {
   errorDisplayColor: "",
   errorMessge: "",
   loadingPageMessage: "",
-	divisionToInject: ""
+  divisionToInject: ""
 };
 
 window.onload = () => {
@@ -75,14 +75,14 @@ function loadManager() {
       	if(simpleSearchStatus == loaded) {
           return load
         } else {
-					return mal
+	  return mal
          } 
       } 
     } else {
       if(settingsStatus == mal | settingsStatus == null | settingsStatus < 0) {
-				return mal
+	return mal
       } else {
-				return mal
+	return mal
        }
      }  
    } else {
@@ -96,23 +96,23 @@ function loadManager() {
          if(settingsStatus == loaded) {
            return load
          } else {
-					 return mal
+	   return mal
          }
        } else {
-				 return mal
+	  return mal
        } 
      	  } else { 
            if(auth == null | auth == < 0) {
-						 return mal
+	    return mal
           } else {
-						return mal
+	    return mal
           }
      	} 
    	  } else {
         if(framedStatus == mal | framedStatus == < 0 | framedStatus == null) {
-					return mal
+	 return mal
       } else { 
-					return mal
+	return mal
       } 
    	}
   } 
