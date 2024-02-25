@@ -34,7 +34,7 @@ var loadStatus = loadManager();
 			hideWindow()
 		} else {
 			if(loadStatus == load) {
-				var appmarkup = '';
+				var appmarkup = fetch('applicationMarkup.txt');
 				var application = document.getElementById(pLoaderConfig.divisionToInject);
 				application.innerHTML = appmarkup;
 			} else {
