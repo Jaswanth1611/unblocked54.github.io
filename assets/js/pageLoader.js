@@ -15,12 +15,29 @@ var pLoaderConfig = {
   authElem: "",
   authAttribute: "",
   authKey: "",
- };
+  loadingStatusLocation: "",
+  errorDisplayColor: "",
+  errorMessge: "",
+	loadingPageMessage: ""
+};
 
 window.onload = () => {
  loadManager()
  console.log(pLoaderConfig.loadMessage + 'Parent Application: ' + pLoaderConfig.applicationName);
 }
+
+function loadPage(type) {
+console.log(ploaderConfig.loadingPageMessage)
+var inject = document.getElementById(pLoaderConfig.elemToinject)
+} 
+
+function loadingError(message) {
+var diplayMessage = document.getElementById(pLoaderConfig.loadingStatusLocation);
+displayMessage.innerHTML = message;
+displayMessage.style.color = pLoaderConfig.errorDisplayColor; 
+
+console.log(pLoaderConfig.errorMessage + "Error was: " + message)
+} 
 
 function loadManager() {
    var framedStatus = checkTop();
