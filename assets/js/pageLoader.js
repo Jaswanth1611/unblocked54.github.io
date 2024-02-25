@@ -18,7 +18,7 @@ var pLoaderConfig = {
   loadingStatusLocation: "",
   errorDisplayColor: "",
   errorMessge: "",
-	loadingPageMessage: ""
+  loadingPageMessage: ""
 };
 
 window.onload = () => {
