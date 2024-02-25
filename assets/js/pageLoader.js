@@ -26,12 +26,16 @@ function loadManager() {
    var framedStatus = checkTop();
    var simpleSearchStatus = startSimpleSearch();
    var settingsStatus = loadSettings();
-  	
+
+//If window isn't hidden
    if(framedStatus == normal) {
-   	if(settingsStatus == loaded) {
+  //Determine 1 of 2 factors for loading
+   if(settingsStatus == loaded) {
+	//Determine if it should be
       if(settings.hideWindowOnLoad == true) {
         hideWindow();
       } else {
+	//Determine 2 of 2 factors for loading
       	if(simpleSearchStatus == loaded) {
           loadPage("default");
         } else {
@@ -46,10 +50,21 @@ function loadManager() {
        }
      }  
    } else {
+  //If window is hidden
    if(framedStatus == hidden) {
+     //Authorize it 
      var auth = document.getElementById(pLoaderConfig.authElem).getAttribute(pLoaderConfig.authAttribute);
      if(auth == pLoaderConfig.authKey) {
-       loadPage("default")
+	//Ensure other 2 loading factors
+       if(simpleSearchStatus == loaded) {
+         if(settingsStatus == loaded) {
+           loadPage("default")
+         } else {
+          loadingError("An error occured when loading user customizable settings, please try again.")
+         }
+       } else {
+         loadingError("An error occured when loading the Simple Search library. Please try again!")
+       } 
      	  } else { 
            if(auth == null | auth == < 0) {
              loadingError("The authorization key passed from the original window is null or less than value of 0! Please try again.")
@@ -90,7 +105,13 @@ function loadSettings() {
       	return loaded
    } else {
    	if(checkTop() == normal) {
-      var window.settings = JSON.parse(localStorage.getItems(pLoaderConfig.settingsKey));
+      if(localStorage.getItem(pLoaderConfig.settingsKey) == null) {
+        window.settings = {};
+        return loaded
+      } else {
+      var window.settings = JSON.parse(localStorage.getItem(pLoaderConfig.settingsKey))
+        return loaded
+      }
       return loaded
     } else {
       return mal 
