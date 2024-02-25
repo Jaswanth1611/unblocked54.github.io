@@ -18,17 +18,36 @@ var pLoaderConfig = {
   loadingStatusLocation: "",
   errorDisplayColor: "",
   errorMessge: "",
-  loadingPageMessage: ""
+  loadingPageMessage: "",
+	divisionToInject: ""
 };
 
 window.onload = () => {
- loadManager()
+ loadPage()
  console.log(pLoaderConfig.loadMessage + 'Parent Application: ' + pLoaderConfig.applicationName);
 }
 
-function loadPage(type) {
-console.log(ploaderConfig.loadingPageMessage)
-var inject = document.getElementById(pLoaderConfig.elemToinject)
+function loadPage() {
+var loadStatus = loadManager(); 
+	if(loadStatus == load | loadStatus == mal | loadStatus == hide) {
+		if(loadStatus == hide) {
+			hideWindow()
+		} else {
+			if(loadStatus == load) {
+				var appmarkup = '';
+				var application = document.getElementById(pLoaderConfig.divisionToInject);
+				application.innerHTML = appmarkup;
+			} else {
+				if(loadStatus == mal) {
+					loadingError("An Error has occured while attempting to load Unblocked Games 54! Please try again.")
+				} else {
+					loadingError("An Error has occured while attempting to load Unblocked Games 54! Please try again.")
+				} 
+			} 
+		} 
+	} else {
+		loadingError("An Error has occured while attempting to load Unblocked Games 54! Please try again.")
+	} 
 } 
 
 function loadingError(message) {
@@ -50,20 +69,20 @@ function loadManager() {
    if(settingsStatus == loaded) {
 	//Determine if it should be
       if(settings.hideWindowOnLoad == true) {
-        hideWindow();
+        return hide
       } else {
 	//Determine 2 of 2 factors for loading
       	if(simpleSearchStatus == loaded) {
-          loadPage("default");
+          return load
         } else {
-          loadingError("An error occured when loading the Simple Search library. Please try again!")
+					return mal
          } 
       } 
     } else {
       if(settingsStatus == mal | settingsStatus == null | settingsStatus < 0) {
-        loadingError("This page appears to be being loaded by an unauthorized source!")
+				return mal
       } else {
-        loadingError("Unable to determine what went wrong. Most likley a return error! Try again later.")
+				return mal
        }
      }  
    } else {
@@ -75,25 +94,25 @@ function loadManager() {
 	//Ensure other 2 loading factors
        if(simpleSearchStatus == loaded) {
          if(settingsStatus == loaded) {
-           loadPage("default")
+           return load
          } else {
-          loadingError("An error occured when loading user customizable settings, please try again.")
+					 return mal
          }
        } else {
-         loadingError("An error occured when loading the Simple Search library. Please try again!")
+				 return mal
        } 
      	  } else { 
            if(auth == null | auth == < 0) {
-             loadingError("The authorization key passed from the original window is null or less than value of 0! Please try again.")
+						 return mal
           } else {
-            loadingError("An error occured in regards to the authorization key passed from the original window! Please try again.")
+						return mal
           }
      	} 
    	  } else {
         if(framedStatus == mal | framedStatus == < 0 | framedStatus == null) {
-          loadingError("The frame status is null or less than the value of 0. Please try again!")
+					return mal
       } else { 
-        loadingError("An error occured in regards to the frame status of this page. Please try again later.")
+					return mal
       } 
    	}
   } 
